@@ -1,0 +1,9 @@
+---
+
+- name: This ansible-playbook is used to upgrade the system
+  hosts: my_hosts
+  become: yes 
+  tasks:
+    - name: Upgrade your system
+      apt:
+        upgrade: dist

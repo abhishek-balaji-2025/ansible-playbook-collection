@@ -1,0 +1,23 @@
+---
+
+- name: This ansible-playbook installs apache2 web-server
+  hosts: my_webservers        # Enter your hosts name
+  become: yes   # Become root user
+  vars:
+    webserver: apache2
+    webservice_service: apache2.service
+  tasks:
+    - name: Install apache2 web-server
+      apt:  
+        name: "{{ webserver }}"
+        state: present
+     
+    - name: start the web-server service
+      service:
+        name: "{{ webservice_service }}"
+        state: started
+        enabled: true
+
+
+         
+ 

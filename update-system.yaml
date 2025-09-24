@@ -1,0 +1,10 @@
+---
+
+- name: Update your system
+  hosts: my_hosts
+  become: yes
+  tasks:
+    - name: update your system
+      apt:
+        update_cache: yes
+
